@@ -1,4 +1,4 @@
-package Connection;
+package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +9,8 @@ import java.sql.SQLException;
 public class DBConnection {
 	
 	private static final String url = "";
-	private static final String user = "";
-	private static final String passwd = "";
+	private static final String user = "root";
+	private static final String passwd = "jdbc:mysql://localhost:3306/bibliotheque";
 	private static DBConnection single;
 	private Connection cnx;
 
@@ -34,8 +34,14 @@ public class DBConnection {
 	public Connection getCnx() {
 		return cnx;
 	}
-
 	
-	
+	public void closeCnx() {
+		try {
+			cnx.close();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

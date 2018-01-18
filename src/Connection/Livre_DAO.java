@@ -1,4 +1,4 @@
-package Connection;
+package connection;
 
 //Pour gérer les requètes relatives aux Livres
 
