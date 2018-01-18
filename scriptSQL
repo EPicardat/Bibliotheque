@@ -1,0 +1,43 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Livres
+#------------------------------------------------------------
+
+CREATE TABLE Livres(
+        Id_Livres  int (11) Auto_increment  NOT NULL ,
+        Titre      Varchar (25) NOT NULL ,
+        Code       Int NOT NULL ,
+        Id_Auteur  Int NOT NULL ,
+        Id_Section Int NOT NULL ,
+        PRIMARY KEY (Id_Livres )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Auteur
+#------------------------------------------------------------
+
+CREATE TABLE Auteur(
+        Id_Auteur int (11) Auto_increment  NOT NULL ,
+        Nom       Varchar (25) NOT NULL ,
+        Prenom    Varchar (25) NOT NULL ,
+        PRIMARY KEY (Id_Auteur )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Section
+#------------------------------------------------------------
+
+CREATE TABLE Section(
+        Id_Section int (11) Auto_increment  NOT NULL ,
+        Nom        Varchar (25) NOT NULL ,
+        PRIMARY KEY (Id_Section )
+)ENGINE=InnoDB;
+
+ALTER TABLE Livres ADD CONSTRAINT FK_Livres_Id_Auteur FOREIGN KEY (Id_Auteur) REFERENCES Auteur(Id_Auteur);
+ALTER TABLE Livres ADD CONSTRAINT FK_Livres_Id_Section FOREIGN KEY (Id_Section) REFERENCES Section(Id_Section);
