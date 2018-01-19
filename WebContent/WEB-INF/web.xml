@@ -7,13 +7,14 @@
 	<servlet>
 		<servlet-name>Test</servlet-name>
 		<servlet-class>servlets.Test</servlet-class>
+		
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Test</servlet-name>
-		<url-pattern>/test</url-pattern>
+		<url-pattern>/toto</url-pattern>
 	</servlet-mapping>
 
-
-
+	
 </web-app>
