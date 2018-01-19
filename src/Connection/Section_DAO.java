@@ -1,4 +1,4 @@
-package connection;
+package Connection;
 
 //Pour gérer les requètes relatives aux Sections
 
