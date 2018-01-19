@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/Test")
-
 public class Test extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -22,7 +19,12 @@ public class Test extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		String message = "Transmission de variables : OK !";
+		String message2 = "Ce servlet pue la marée !";
+	    request.setAttribute( "bidule", message );   
+		request.setAttribute("machin", message2);
+	    
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
 	}
 }
